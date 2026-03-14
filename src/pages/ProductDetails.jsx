@@ -44,18 +44,18 @@ const ProductDetails = () => {
   if(error) return <p className="text-center mt-10">{error}</p>
 
   return (
-    <div className="max-w-xl mx-auto p-4 flex flex-col border-2 mt-12">
+    <div className="max-w-xl mx-auto p-4 flex flex-col border-2 mt-6 sm:mt-12">
         
    <button
       onClick={()=>window.history.back()}
-      className="text-black hover:underline mb-4"
+      className="text-black hover:underline mb-4 self-start"
       >
         &larr; Back
       </button>
 
       <img
       src={product.thumbnail}
-      className="w-90 h-60 items-center"
+      className="w-full sm:max-w-sm h-64 object-contain mx-auto"
       />
 
       <h1 className="text-3xl font-bold mt-4">

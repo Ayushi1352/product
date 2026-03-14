@@ -67,12 +67,12 @@ const Home = () => {
 
       <Navbar search={search} setSearch={setSearch}/>
 
-      <div className="flex gap-4 mb-6 flex-wrap">
+      <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:flex-wrap">
 
         <select
           value={category}
           onChange={(e)=>setCategory(e.target.value)}
-          className="border px-3 py-2"
+          className="w-full sm:w-auto border px-3 py-2"
         >
           {categories.map(cat=>(
             <option key={cat} value={cat}>{cat}</option>
@@ -82,7 +82,7 @@ const Home = () => {
         <select
           value={sort}
           onChange={(e)=>setSort(e.target.value)}
-          className="border px-3 py-2"
+          className="w-full sm:w-auto border px-3 py-2"
         >
           <option value="">Sort</option>
           <option value="az">A To Z</option>
@@ -93,13 +93,13 @@ const Home = () => {
 
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {currentProducts.map(product=>(
           <ProductCard key={product.id} product={product}/>
         ))}
       </div>
 
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="flex flex-wrap justify-center gap-2 mt-8">
         {Array.from({length:totalPages},(_,i)=>(
           <button
             key={i}
